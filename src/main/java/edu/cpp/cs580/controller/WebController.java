@@ -132,5 +132,15 @@ public class WebController {
 		modelAndView.addObject("users", listAllUsers());
 		return modelAndView;
 	}
+	
+	/**
+	 * Test by Jonathan Louie.
+	 *
+	 * @return
+	 */
+	@RequestMapping(value = "/price/{productId}/{date}", method = RequestMethod.GET)
+	String jlouie(@PathVariable("productId") String productId, @PathVariable("date") String date) {
+		return productId + ":" + date + ":$123.00";
+	}
 
 }
